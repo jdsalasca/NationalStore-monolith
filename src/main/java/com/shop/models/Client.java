@@ -14,7 +14,7 @@ public class Client {
 	private String id;
 	
 	
-	@NotBlank
+	
 	private DocumentType documentType;
     @Size(min = 3, max = 200, message 
     	      = "Default")

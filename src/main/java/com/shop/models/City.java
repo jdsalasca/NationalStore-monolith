@@ -12,7 +12,7 @@ public class City {
 	@Id
 	private String id;
 	
-    @Size(min = 5, max = 200, message 
+    @Size(min = 4, max = 200, message 
     	      = "Default")
 	private String name;
 

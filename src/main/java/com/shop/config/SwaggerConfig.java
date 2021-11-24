@@ -27,11 +27,11 @@ public class SwaggerConfig {
 	
 	private ApiInfo apiInfo() {
 	    return new ApiInfo(
-	      "Api Rest Spring Boot-Angular-MongoDB", 
-	      "This is the  access point from the frond end of the group 31, we are working for the point 12 of the hackaton", 
+	      "Api Rest Spring Boot-React-MongoDB", 
+	      "This is the  Api for the National Store", 
 	      "API TOS", 
 	      "Terms of service", 
-	      new Contact("Santiago Moreno y Juan Salas", "https://github.com/saforero65/Back_HackatonMintic2022", "jdsalasc@unal.edu.co"), 
+	      new Contact("Juan Salas", "https://github.com/jdsalasca/NationalStore-monolith", "jdsalasc@unal.edu.co"), 
 	      "License of API", "API license URL", Collections.emptyList());
 	}
 

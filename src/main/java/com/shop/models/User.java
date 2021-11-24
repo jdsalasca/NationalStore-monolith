@@ -22,6 +22,8 @@ public class User {
 	private String nick;
     @Email
 	private String email;
+    
+    private City city;
     @Size(min = 3, max = 200, message 
   	      = "Default")
 	private String identityDocument;
@@ -37,15 +39,30 @@ public class User {
 		
 	}
 
+	public User(String id, @Size(min = 3, max = 200, message = "Default") String name,
+			@Size(min = 3, max = 200, message = "Default") String nick, @Email String email, City city,
+			@Size(min = 3, max = 200, message = "Default") String identityDocument,
+			@Size(min = 5, max = 200, message = "Default") String password, Set<String> roles) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.nick = nick;
+		this.email = email;
+		this.city = city;
+		this.identityDocument = identityDocument;
+		this.password = password;
+		this.roles = roles;
+	}
 
 	public User(@Size(min = 3, max = 200, message = "Default") String name,
-			@Size(min = 3, max = 200, message = "Default") String nick, @Email String email,
+			@Size(min = 3, max = 200, message = "Default") String nick, @Email String email, City city,
 			@Size(min = 3, max = 200, message = "Default") String identityDocument,
 			@Size(min = 5, max = 200, message = "Default") String password, Set<String> roles) {
 		super();
 		this.name = name;
 		this.nick = nick;
 		this.email = email;
+		this.city = city;
 		this.identityDocument = identityDocument;
 		this.password = password;
 		this.roles = roles;
@@ -92,6 +109,14 @@ public class User {
 		this.email = email;
 	}
 
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
 	public String getIdentityDocument() {
 		return identityDocument;
 	}
@@ -116,6 +141,10 @@ public class User {
 		this.roles = roles;
 	}
 	
+	
+
+
+
 	
 	
 

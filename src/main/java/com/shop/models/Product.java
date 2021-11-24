@@ -18,26 +18,32 @@ public class Product {
     @Size(min = 3, max = 200, message 
       = "Default")
 	private String name;
+    
+    private Supplier supplier;
 	
 	 @Min(value = 1000, message = "Price should be more than 1000 COP")
 	private float priceItem;
 
 	public Product(String id, @Size(min = 3, max = 200, message = "Default") float ivaTosell,
+			Supplier supplier,
 			@Size(min = 3, max = 200, message = "Default") String name,
 			@Min(value = 1000, message = "Price should be more than 1000 COP") float priceItem) {
 		super();
 		this.id = id;
 		this.ivaTosell = ivaTosell;
+		this.supplier = supplier;
 		this.name = name;
 		this.priceItem = priceItem;
 	}
 	
 
 	public Product(@Size(min = 3, max = 200, message = "Default") float ivaTosell,
+			Supplier supplier,
 			@Size(min = 3, max = 200, message = "Default") String name,
 			@Min(value = 1000, message = "Price should be more than 1000 COP") float priceItem) {
 		super();
 		this.ivaTosell = ivaTosell;
+		this.supplier = supplier;
 		this.name = name;
 		this.priceItem = priceItem;
 	}
@@ -72,6 +78,18 @@ public class Product {
 
 	public void setIvaTosell(float ivaTosell) {
 		this.ivaTosell = ivaTosell;
+	}
+	
+	
+
+
+	public Supplier getSupplier() {
+		return supplier;
+	}
+
+
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
 	}
 
 
