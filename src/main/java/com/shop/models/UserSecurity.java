@@ -22,7 +22,6 @@ public class UserSecurity  implements UserDetails{
 	private String nick;
     @Email
 	private String email;
-    private City city;
     @Size(min = 3, max = 200, message 
   	      = "Default")
 	private String identityDocument;
@@ -37,12 +36,11 @@ public class UserSecurity  implements UserDetails{
         		
         		user.getRoles().stream().map(rol -> new SimpleGrantedAuthority(rol
                 )).collect(Collectors.toList());
-        return new UserSecurity(user.getName(),user.getNick(),user.getEmail(),user.getCity(), user.getIdentityDocument(), user.getPassword(), authorities);
+        return new UserSecurity(user.getName(),user.getNick(),user.getEmail(), user.getIdentityDocument(), user.getPassword(), authorities);
     }
 
 	public UserSecurity(@Size(min = 3, max = 200, message = "Default") String name,
 			@Size(min = 3, max = 200, message = "Default") String nick, @Email String email,
-			City city,
 			@Size(min = 3, max = 200, message = "Default") String identityDocument,
 			@Size(min = 5, max = 200, message = "Default") String password,
 			Collection<? extends GrantedAuthority> authorities) {
@@ -50,7 +48,6 @@ public class UserSecurity  implements UserDetails{
 		this.name = name;
 		this.nick = nick;
 		this.email = email;
-		this.city= city;
 		this.identityDocument = identityDocument;
 		this.password = password;
 		this.authorities = authorities;
@@ -73,15 +70,6 @@ public class UserSecurity  implements UserDetails{
 	}
 	
 	
-
-	public City getCity() {
-		return city;
-	}
-
-	public void setCity(City city) {
-		this.city = city;
-	}
-
 	public String getEmail() {
 		return email;
 	}

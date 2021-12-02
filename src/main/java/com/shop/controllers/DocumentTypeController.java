@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,7 @@ public class DocumentTypeController {
 	
 	@Autowired
 	IDocumentTypeDAO iDocumentTypeDAO;
-
+	@PreAuthorize("hasRole('USER')")
 	@GetMapping
 	public ResponseEntity<List<DocumentType>> findAllDocumentType (){
 		
@@ -40,7 +41,7 @@ public class DocumentTypeController {
 		return new ResponseEntity<List<DocumentType>>(resultados, HttpStatus.OK);
 
 	}
-	
+	@PreAuthorize("hasRole('USER')")
 	@GetMapping("/{id}")
 	public ResponseEntity<DocumentType> findDocumentById (@PathVariable String id) {
 		
@@ -50,7 +51,7 @@ public class DocumentTypeController {
 		}
 		return new ResponseEntity("documento no encontrado", HttpStatus.NOT_FOUND);
 	}
-	
+	@PreAuthorize("hasRole('USER')")
 	@PostMapping
 	public ResponseEntity<DocumentType> newDocument (@Valid @RequestBody DocumentType documentType, BindingResult bindingResult){
 		if (bindingResult.hasErrors()) {

@@ -10,4 +10,6 @@ public interface ISupplierDAO  extends MongoRepository<Supplier, String>{
 
 	List<Supplier> findAll();
 	
+	List<Supplier> findByNit(String nit);
+	
 }

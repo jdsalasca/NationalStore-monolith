@@ -13,6 +13,8 @@ public interface IClientDAO extends MongoRepository<Client, String> {
 	
 	Optional<Client> findById();
 	
+	List<Client> findByDocumentnumber(String documentnumber);
+	
 	
 	
 }

@@ -14,8 +14,6 @@ public class Client {
 	private String id;
 	
 	
-	
-	private DocumentType documentType;
     @Size(min = 3, max = 200, message 
     	      = "Default")
 	private String documentnumber;
@@ -35,7 +33,7 @@ public class Client {
     	      = "Default")
 	private String phonenumber;
     
-	private City city;
+	
 	
 	
 	
@@ -44,37 +42,37 @@ public class Client {
 		super();
 	}
 
-	public Client(@NotBlank DocumentType documentType,
+	public Client(
 			@Size(min = 3, max = 200, message = "Default") String documentnumber,
 			@Size(min = 3, max = 200, message = "Default") String address,
 			@Size(min = 3, max = 200, message = "Default") @Email String email,
 			@Size(min = 3, max = 200, message = "Default") String name,
-			@Size(min = 3, max = 200, message = "Default") String phonenumber, City city) {
+			@Size(min = 3, max = 200, message = "Default") String phonenumber) {
 		super();
-		this.documentType = documentType;
+		
 		this.documentnumber = documentnumber;
 		this.address = address;
 		this.email = email;
 		this.name = name;
 		this.phonenumber = phonenumber;
-		this.city = city;
+		
 	}
 
-	public Client(String id, @NotBlank DocumentType documentType,
+	public Client(String id,
 			@Size(min = 3, max = 200, message = "Default") String documentnumber,
 			@Size(min = 3, max = 200, message = "Default") String address,
 			@Size(min = 3, max = 200, message = "Default") @Email String email,
 			@Size(min = 3, max = 200, message = "Default") String name,
-			@Size(min = 3, max = 200, message = "Default") String phonenumber, City city) {
+			@Size(min = 3, max = 200, message = "Default") String phonenumber) {
 		super();
 		this.id = id;
-		this.documentType = documentType;
+		
 		this.documentnumber = documentnumber;
 		this.address = address;
 		this.email = email;
 		this.name = name;
 		this.phonenumber = phonenumber;
-		this.city = city;
+		
 	}
 
 	public String getId() {
@@ -85,13 +83,7 @@ public class Client {
 		this.id = id;
 	}
 
-	public DocumentType getDocumentType() {
-		return documentType;
-	}
 
-	public void setDocumentType(DocumentType documentType) {
-		this.documentType = documentType;
-	}
 
 	public String getDocumentnumber() {
 		return documentnumber;
@@ -133,14 +125,7 @@ public class Client {
 		this.phonenumber = phonenumber;
 	}
 
-	public City getCity() {
-		return city;
-	}
 
-	public void setCity(City city) {
-		this.city = city;
-	}
-	
 	
 	
 	

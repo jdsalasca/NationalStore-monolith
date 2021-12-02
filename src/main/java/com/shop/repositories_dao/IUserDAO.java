@@ -14,4 +14,5 @@ public interface IUserDAO extends MongoRepository<User, String>{
 	
 	List<User> findByNick (String nick);
 	List<User> findByEmail (String email);
+	List<User> findByIdentityDocument(String identityDocument);
 }

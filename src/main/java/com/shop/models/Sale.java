@@ -14,40 +14,35 @@ public class Sale {
 	private String id;
     @Size(min = 3, max = 200, message 
     	      = "Default")
-	private Client cliendId;
-	
-    @NotBlank
-	private User userId;
+	private Client client_document;
+    
     @Min (value = 5000, message = "min value must be 5000 COP")
 	private float totalsale;
     @Min (value = 5000, message = "min value must be 5000 COP")
 	private float saleTaxes;
-    
-	public Sale(String id, @Size(min = 3, max = 200, message = "Default") Client cliendId, @NotBlank User userId,
+	public Sale(String id, @Size(min = 3, max = 200, message = "Default") Client client_document,
 			@Min(value = 5000, message = "min value must be 5000 COP") float totalsale,
 			@Min(value = 5000, message = "min value must be 5000 COP") float saleTaxes) {
 		super();
 		this.id = id;
-		this.cliendId = cliendId;
-		this.userId = userId;
+		this.client_document = client_document;
 		this.totalsale = totalsale;
 		this.saleTaxes = saleTaxes;
 	}
-	public Sale(@Size(min = 3, max = 200, message = "Default") Client cliendId, @NotBlank User userId,
+	public Sale(@Size(min = 3, max = 200, message = "Default") Client client_document,
 			@Min(value = 5000, message = "min value must be 5000 COP") float totalsale,
 			@Min(value = 5000, message = "min value must be 5000 COP") float saleTaxes) {
 		super();
-		this.cliendId = cliendId;
-		this.userId = userId;
+		this.client_document = client_document;
 		this.totalsale = totalsale;
 		this.saleTaxes = saleTaxes;
+	}
+	public Sale() {
+		super();
 	}
 	public Sale(String id) {
 		super();
 		this.id = id;
-	}
-	public Sale() {
-		super();
 	}
 	public String getId() {
 		return id;
@@ -55,17 +50,11 @@ public class Sale {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public Client getCliendId() {
-		return cliendId;
+	public Client getClient_document() {
+		return client_document;
 	}
-	public void setCliendId(Client cliendId) {
-		this.cliendId = cliendId;
-	}
-	public User getUserId() {
-		return userId;
-	}
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setClient_document(Client client_document) {
+		this.client_document = client_document;
 	}
 	public float getTotalsale() {
 		return totalsale;
@@ -79,6 +68,11 @@ public class Sale {
 	public void setSaleTaxes(float saleTaxes) {
 		this.saleTaxes = saleTaxes;
 	}
+    
+    
+    
+    
+    
 	
 	
     

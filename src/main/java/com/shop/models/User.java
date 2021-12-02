@@ -23,7 +23,7 @@ public class User {
     @Email
 	private String email;
     
-    private City city;
+
     @Size(min = 3, max = 200, message 
   	      = "Default")
 	private String identityDocument;
@@ -38,6 +38,8 @@ public class User {
 		roles.add("ROLE_USER");
 		
 	}
+	
+	
 
 	public User(String id, @Size(min = 3, max = 200, message = "Default") String name,
 			@Size(min = 3, max = 200, message = "Default") String nick, @Email String email, City city,
@@ -48,7 +50,6 @@ public class User {
 		this.name = name;
 		this.nick = nick;
 		this.email = email;
-		this.city = city;
 		this.identityDocument = identityDocument;
 		this.password = password;
 		this.roles = roles;
@@ -62,7 +63,6 @@ public class User {
 		this.name = name;
 		this.nick = nick;
 		this.email = email;
-		this.city = city;
 		this.identityDocument = identityDocument;
 		this.password = password;
 		this.roles = roles;
@@ -109,13 +109,6 @@ public class User {
 		this.email = email;
 	}
 
-	public City getCity() {
-		return city;
-	}
-
-	public void setCity(City city) {
-		this.city = city;
-	}
 
 	public String getIdentityDocument() {
 		return identityDocument;

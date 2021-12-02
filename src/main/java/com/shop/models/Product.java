@@ -14,104 +14,109 @@ public class Product {
 	private String id;
     @Size(min = 3, max = 200, message 
   	      = "Default")
-	private float ivaTosell;
+	private float iva_item;
+    @Size(min = 3, max = 200, message 
+    	      = "Default")
+	private String productCode;
+
     @Size(min = 3, max = 200, message 
       = "Default")
-	private String name;
+	private String productName;
     
-    private Supplier supplier;
+    private String nitSupplier;
 	
 	 @Min(value = 1000, message = "Price should be more than 1000 COP")
-	private float priceItem;
+	private float pricePurchase;
+	 @Min(value = 1000, message = "Price should be more than 1000 COP")
+	private float priceToBuy;
+	 
+	 
+	 
 
-	public Product(String id, @Size(min = 3, max = 200, message = "Default") float ivaTosell,
-			Supplier supplier,
-			@Size(min = 3, max = 200, message = "Default") String name,
-			@Min(value = 1000, message = "Price should be more than 1000 COP") float priceItem) {
+	
+	
+	public Product(@Size(min = 3, max = 200, message = "Default") float iva_item,
+			@Size(min = 3, max = 200, message = "Default") String productCode,
+			@Size(min = 3, max = 200, message = "Default") String productName, String nitSupplier,
+			@Min(value = 1000, message = "Price should be more than 1000 COP") float pricePurchase,
+			@Min(value = 1000, message = "Price should be more than 1000 COP") float priceToBuy) {
+		super();
+		this.iva_item = iva_item;
+		this.productCode = productCode;
+		this.productName = productName;
+		this.nitSupplier = nitSupplier;
+		this.pricePurchase = pricePurchase;
+		this.priceToBuy = priceToBuy;
+	}
+	public Product(String id, @Size(min = 3, max = 200, message = "Default") float iva_item,
+			@Size(min = 3, max = 200, message = "Default") String productCode,
+			@Size(min = 3, max = 200, message = "Default") String productName, String nitSupplier,
+			@Min(value = 1000, message = "Price should be more than 1000 COP") float pricePurchase,
+			@Min(value = 1000, message = "Price should be more than 1000 COP") float priceToBuy) {
 		super();
 		this.id = id;
-		this.ivaTosell = ivaTosell;
-		this.supplier = supplier;
-		this.name = name;
-		this.priceItem = priceItem;
+		this.iva_item = iva_item;
+		this.productCode = productCode;
+		this.productName = productName;
+		this.nitSupplier = nitSupplier;
+		this.pricePurchase = pricePurchase;
+		this.priceToBuy = priceToBuy;
 	}
-	
-
-	public Product(@Size(min = 3, max = 200, message = "Default") float ivaTosell,
-			Supplier supplier,
-			@Size(min = 3, max = 200, message = "Default") String name,
-			@Min(value = 1000, message = "Price should be more than 1000 COP") float priceItem) {
-		super();
-		this.ivaTosell = ivaTosell;
-		this.supplier = supplier;
-		this.name = name;
-		this.priceItem = priceItem;
-	}
-	
-
-
-	public Product(String id) {
-		super();
-		this.id = id;
-	}
-
 
 	public Product() {
 		super();
 	}
-
-
+	public Product(String id) {
+		super();
+		this.id = id;
+	}
 	public String getId() {
 		return id;
 	}
-
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
-
-	public float getIvaTosell() {
-		return ivaTosell;
+	public float getIva_item() {
+		return iva_item;
 	}
-
-
-	public void setIvaTosell(float ivaTosell) {
-		this.ivaTosell = ivaTosell;
+	public void setIva_item(float iva_item) {
+		this.iva_item = iva_item;
 	}
 	
 	
 
-
-	public Supplier getSupplier() {
-		return supplier;
+	public String getProductCode() {
+		return productCode;
+	}
+	public void setProductCode(String productCode) {
+		this.productCode = productCode;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getNitSupplier() {
+		return nitSupplier;
+	}
+	public void setNitSupplier(String nitSupplier) {
+		this.nitSupplier = nitSupplier;
+	}
+	public float getPricePurchase() {
+		return pricePurchase;
+	}
+	public void setPricePurchase(float pricePurchase) {
+		this.pricePurchase = pricePurchase;
+	}
+	public float getPriceToBuy() {
+		return priceToBuy;
+	}
+	public void setPriceToBuy(float priceToBuy) {
+		this.priceToBuy = priceToBuy;
 	}
 
 
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public float getPriceItem() {
-		return priceItem;
-	}
-
-
-	public void setPriceItem(float priceItem) {
-		this.priceItem = priceItem;
-	}
-	
 	
 	 
 
