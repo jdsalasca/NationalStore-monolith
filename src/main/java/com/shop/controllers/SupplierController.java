@@ -56,7 +56,7 @@ public class SupplierController {
 		
 	}
 	@PreAuthorize("hasRole('USER')")
-	@GetMapping("/{nit}")
+	@GetMapping("nit/{nit}")
 	public ResponseEntity<Supplier> findSupplierByNit (@PathVariable String nit) {
 		List<Supplier> supplierFound = iSupplierDAO.findByNit(nit);
 		if (!supplierFound.isEmpty()) {
@@ -74,7 +74,7 @@ public class SupplierController {
 		}
 		try {
 			Supplier supplierSaved = iSupplierDAO.save(supplier);
-			return new ResponseEntity<Supplier>(supplierSaved,HttpStatus.CREATED);
+			return new ResponseEntity<Supplier>(supplierSaved,HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity("We couldn't create the supplier", HttpStatus.BAD_REQUEST);
 		}
@@ -96,7 +96,7 @@ public class SupplierController {
 		
 	}
 	@PreAuthorize("hasRole('USER')")
-	@DeleteMapping
+	@DeleteMapping("/{id}")
 	public ResponseEntity<HttpStatus> deleteSupplierById (@PathVariable String id){
 		try {
 			iSupplierDAO.deleteById(id);

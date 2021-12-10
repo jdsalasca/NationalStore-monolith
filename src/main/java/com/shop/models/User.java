@@ -11,35 +11,31 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
 public class User {
-	
+
 	@Id
 	private String id;
-    @Size(min = 3, max = 200, message 
-    	      = "Default")
+	@Size(min = 3, max = 200, message = "Default")
 	private String name;
-    @Size(min = 3, max = 200, message 
-    	      = "Default")
+	@Size(min = 3, max = 200, message = "Default")
 	private String nick;
-    @Email
+	@Email
 	private String email;
-    
 
-    @Size(min = 3, max = 200, message 
-  	      = "Default")
+	@Size(min = 3, max = 200, message = "Default")
 	private String identityDocument;
-    @Size(min = 5, max = 200, message 
-  	      = "Default")
+	@Size(min = 5, max = 200, message = "Default")
 	private String password;
-    
+
 	private Set<String> roles = new HashSet<>();
-	
-	public void addUserRol () {
-		
-		roles.add("ROLE_USER");
-		
+
+	public void addUserRol() {
+
+		if (roles.isEmpty()) {
+
+			roles.add("ROLE_USER");
+
+		}
 	}
-	
-	
 
 	public User(String id, @Size(min = 3, max = 200, message = "Default") String name,
 			@Size(min = 3, max = 200, message = "Default") String nick, @Email String email, City city,
@@ -109,7 +105,6 @@ public class User {
 		this.email = email;
 	}
 
-
 	public String getIdentityDocument() {
 		return identityDocument;
 	}
@@ -133,12 +128,5 @@ public class User {
 	public void setRoles(Set<String> roles) {
 		this.roles = roles;
 	}
-	
-	
-
-
-
-	
-	
 
 }

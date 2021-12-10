@@ -118,7 +118,7 @@ public class UserController {
 			user.addUserRol();
 			user.setPassword(passwordEncoder.encode(user.getPassword()));
 			User userToSave = iUserDAO.save(user);
-			return new ResponseEntity<User>(userToSave, HttpStatus.CREATED);
+			return new ResponseEntity<User>(userToSave, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity("user not save", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -170,7 +170,9 @@ public class UserController {
 		}
 		Optional<User> userFound = iUserDAO.findById(id);
 		if (userFound.isPresent()) {
+			user.addUserRol();
 			user.setId(id);
+			user.setPassword(passwordEncoder.encode(user.getPassword()));
 			User userSaved = iUserDAO.save(user);
 			return new ResponseEntity<User>(user, HttpStatus.OK);
 		} else {

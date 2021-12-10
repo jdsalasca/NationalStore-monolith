@@ -35,6 +35,7 @@ public class ClientController {
 	
 	@Autowired
 	IClientDAO iClientDAO;
+		
 	@PreAuthorize("hasRole('USER')")
 	@GetMapping
 	public ResponseEntity<List<Client>> findAllClients (){
@@ -59,9 +60,9 @@ public class ClientController {
 	}
 	@PreAuthorize("hasRole('USER')")
 	@GetMapping("/document/{identityDocument}")
-	public ResponseEntity<Client> findClientByDocument (@PathVariable String idDocument) {
+	public ResponseEntity<Client> findClientByDocument (@PathVariable String identityDocument) {
 		
-		List<Client> clientFound = iClientDAO.findByDocumentnumber(idDocument);
+		List<Client> clientFound = iClientDAO.findByDocumentnumber(identityDocument);
 		if (!clientFound.isEmpty()) {
 			return new ResponseEntity<Client>(clientFound.get(0), HttpStatus.OK);
 			
@@ -90,7 +91,7 @@ public class ClientController {
 			}
 		try {
 			Client ClientSave = iClientDAO.save(client);
-			return new ResponseEntity<Client>(ClientSave, HttpStatus.CREATED);
+			return new ResponseEntity<Client>(ClientSave, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity("city not created", HttpStatus.BAD_REQUEST);
 		}

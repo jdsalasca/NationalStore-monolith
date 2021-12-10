@@ -61,7 +61,7 @@ public class CityController {
 		}
 		try {
 			City citySave = iCityDAO.save(city);
-			return new ResponseEntity<City>(citySave, HttpStatus.CREATED);
+			return new ResponseEntity<City>(citySave, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity("city not created", HttpStatus.BAD_REQUEST);
 		}

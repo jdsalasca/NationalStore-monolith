@@ -60,7 +60,7 @@ public class SaleDetailsController {
 		try {
 			saleDetails.setId(id);
 			SaleDetails saleDetailsToSave = iSaleDetailsDAO.save(saleDetails);
-			return new ResponseEntity<SaleDetails>(saleDetailsToSave, HttpStatus.CREATED);
+			return new ResponseEntity<SaleDetails>(saleDetailsToSave, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity("Sale Details not saved, sorry", HttpStatus.INTERNAL_SERVER_ERROR);
 		}

@@ -10,7 +10,7 @@ public class Supplier {
 	
 	@Id
 	private String id;
-	private City city;
+	private String city;
     @Size(min = 3, max = 200, message 
   	      = "Default")
 	private String address;
@@ -20,12 +20,11 @@ public class Supplier {
     @Size(min = 3, max = 200, message 
   	      = "Default")
 	private String phoneNumber;
-    @Size(min = 3, max = 200, message 
-  	      = "Default")
+
 	private String nit;
     
     
-	public Supplier(String id, City city, @Size(min = 3, max = 200, message = "Default") String address,
+	public Supplier(String id, String city, @Size(min = 3, max = 200, message = "Default") String address,
 			@Size(min = 3, max = 200, message = "Default") String name,
 			@Size(min = 3, max = 200, message = "Default") String phoneNumber,
 			@Size(min = 3, max = 200, message = "Default") String nit) {
@@ -39,7 +38,7 @@ public class Supplier {
 	}
 
 
-	public Supplier(City city, @Size(min = 3, max = 200, message = "Default") String address,
+	public Supplier(String city, @Size(min = 3, max = 200, message = "Default") String address,
 			@Size(min = 3, max = 200, message = "Default") String name,
 			@Size(min = 3, max = 200, message = "Default") String phoneNumber,
 			@Size(min = 3, max = 200, message = "Default") String nit) {
@@ -73,12 +72,12 @@ public class Supplier {
 	}
 
 
-	public City getCity() {
+	public String getCity() {
 		return city;
 	}
 
 
-	public void setCity(City city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 

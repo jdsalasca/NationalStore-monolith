@@ -14,13 +14,13 @@ public class Sale {
 	private String id;
     @Size(min = 3, max = 200, message 
     	      = "Default")
-	private Client client_document;
+	private String client_document;
     
     @Min (value = 5000, message = "min value must be 5000 COP")
 	private float totalsale;
     @Min (value = 5000, message = "min value must be 5000 COP")
 	private float saleTaxes;
-	public Sale(String id, @Size(min = 3, max = 200, message = "Default") Client client_document,
+	public Sale(String id, @Size(min = 3, max = 200, message = "Default") String client_document,
 			@Min(value = 5000, message = "min value must be 5000 COP") float totalsale,
 			@Min(value = 5000, message = "min value must be 5000 COP") float saleTaxes) {
 		super();
@@ -29,7 +29,7 @@ public class Sale {
 		this.totalsale = totalsale;
 		this.saleTaxes = saleTaxes;
 	}
-	public Sale(@Size(min = 3, max = 200, message = "Default") Client client_document,
+	public Sale(@Size(min = 3, max = 200, message = "Default") String client_document,
 			@Min(value = 5000, message = "min value must be 5000 COP") float totalsale,
 			@Min(value = 5000, message = "min value must be 5000 COP") float saleTaxes) {
 		super();
@@ -50,10 +50,10 @@ public class Sale {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public Client getClient_document() {
+	public String getClient_document() {
 		return client_document;
 	}
-	public void setClient_document(Client client_document) {
+	public void setClient_document(String client_document) {
 		this.client_document = client_document;
 	}
 	public float getTotalsale() {

@@ -85,7 +85,7 @@ public class ProductController {
 		}
 		try {
 			Product productSaved = iProductDAO.save(product);
-			return new ResponseEntity<Product>(productSaved, HttpStatus.CREATED);
+			return new ResponseEntity<Product>(productSaved, HttpStatus.OK);
 		} catch (Exception e) {
 
 		return new ResponseEntity("We couldn't create the product", HttpStatus.INTERNAL_SERVER_ERROR);

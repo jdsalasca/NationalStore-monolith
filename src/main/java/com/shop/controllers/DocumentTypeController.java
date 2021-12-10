@@ -60,7 +60,7 @@ public class DocumentTypeController {
 		}
 		try {
 			DocumentType documentsave = iDocumentTypeDAO.save(documentType);
-			return new ResponseEntity<DocumentType>(documentsave, HttpStatus.CREATED);
+			return new ResponseEntity<DocumentType>(documentsave, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity("Documento no creado", HttpStatus.BAD_REQUEST);
 					

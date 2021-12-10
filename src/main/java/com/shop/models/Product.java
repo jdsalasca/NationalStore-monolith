@@ -12,11 +12,9 @@ public class Product {
 	
 	@Id
 	private String id;
-    @Size(min = 3, max = 200, message 
-  	      = "Default")
+	
 	private float iva_item;
-    @Size(min = 3, max = 200, message 
-    	      = "Default")
+
 	private String productCode;
 
     @Size(min = 3, max = 200, message 
@@ -25,9 +23,9 @@ public class Product {
     
     private String nitSupplier;
 	
-	 @Min(value = 1000, message = "Price should be more than 1000 COP")
+	
 	private float pricePurchase;
-	 @Min(value = 1000, message = "Price should be more than 1000 COP")
+	 
 	private float priceToBuy;
 	 
 	 
@@ -35,7 +33,7 @@ public class Product {
 
 	
 	
-	public Product(@Size(min = 3, max = 200, message = "Default") float iva_item,
+	public Product(@Min(value = 1000, message = "Price should be more than 1000 COP") float iva_item,
 			@Size(min = 3, max = 200, message = "Default") String productCode,
 			@Size(min = 3, max = 200, message = "Default") String productName, String nitSupplier,
 			@Min(value = 1000, message = "Price should be more than 1000 COP") float pricePurchase,
@@ -48,7 +46,7 @@ public class Product {
 		this.pricePurchase = pricePurchase;
 		this.priceToBuy = priceToBuy;
 	}
-	public Product(String id, @Size(min = 3, max = 200, message = "Default") float iva_item,
+	public Product(String id, @Min(value = 1000, message = "Price should be more than 1000 COP") float iva_item,
 			@Size(min = 3, max = 200, message = "Default") String productCode,
 			@Size(min = 3, max = 200, message = "Default") String productName, String nitSupplier,
 			@Min(value = 1000, message = "Price should be more than 1000 COP") float pricePurchase,
