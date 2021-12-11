@@ -1,5 +1,7 @@
 package com.shop.models;
 
+import java.util.List;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -14,28 +16,61 @@ public class Sale {
 	private String id;
     @Size(min = 3, max = 200, message 
     	      = "Default")
-	private String client_document;
+	private String clientDocument;
     
-    @Min (value = 5000, message = "min value must be 5000 COP")
-	private float totalsale;
-    @Min (value = 5000, message = "min value must be 5000 COP")
-	private float saleTaxes;
-	public Sale(String id, @Size(min = 3, max = 200, message = "Default") String client_document,
-			@Min(value = 5000, message = "min value must be 5000 COP") float totalsale,
-			@Min(value = 5000, message = "min value must be 5000 COP") float saleTaxes) {
+    private String sale_code;
+        
+	private List<SaleDetails> saleDetails;
+	private float sale_iva;
+    
+	private float total_venta;
+    
+	private float valor_venta;
+	
+	
+	
+	
+
+	
+	
+	public Sale(@Size(min = 3, max = 200, message = "Default") String clientDocument, String sale_code,
+			List<SaleDetails> saleDetails, float sale_iva, float total_venta, float valor_venta) {
+		super();
+		this.clientDocument = clientDocument;
+		this.sale_code = sale_code;
+		this.saleDetails = saleDetails;
+		this.sale_iva = sale_iva;
+		this.total_venta = total_venta;
+		this.valor_venta = valor_venta;
+	}
+	public Sale(String id, @Size(min = 3, max = 200, message = "Default") String clientDocument, String sale_code,
+			List<SaleDetails> saleDetails, float sale_iva, float total_venta, float valor_venta) {
 		super();
 		this.id = id;
-		this.client_document = client_document;
-		this.totalsale = totalsale;
-		this.saleTaxes = saleTaxes;
+		this.clientDocument = clientDocument;
+		this.sale_code = sale_code;
+		this.saleDetails = saleDetails;
+		this.sale_iva = sale_iva;
+		this.total_venta = total_venta;
+		this.valor_venta = valor_venta;
 	}
-	public Sale(@Size(min = 3, max = 200, message = "Default") String client_document,
-			@Min(value = 5000, message = "min value must be 5000 COP") float totalsale,
-			@Min(value = 5000, message = "min value must be 5000 COP") float saleTaxes) {
-		super();
-		this.client_document = client_document;
-		this.totalsale = totalsale;
-		this.saleTaxes = saleTaxes;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getSale_code() {
+		return sale_code;
+	}
+	public void setSale_code(String sale_code) {
+		this.sale_code = sale_code;
+	}
+	public float getSale_iva() {
+		return sale_iva;
+	}
+	public void setSale_iva(float sale_iva) {
+		this.sale_iva = sale_iva;
 	}
 	public Sale() {
 		super();
@@ -44,31 +79,36 @@ public class Sale {
 		super();
 		this.id = id;
 	}
-	public String getId() {
-		return id;
+
+
+
+	public String getClientDocument() {
+		return clientDocument;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setClientDocument(String clientDocument) {
+		this.clientDocument = clientDocument;
 	}
-	public String getClient_document() {
-		return client_document;
+	public float getTotal_venta() {
+		return total_venta;
 	}
-	public void setClient_document(String client_document) {
-		this.client_document = client_document;
+	public void setTotal_venta(float total_venta) {
+		this.total_venta = total_venta;
 	}
-	public float getTotalsale() {
-		return totalsale;
+	public float getValor_venta() {
+		return valor_venta;
 	}
-	public void setTotalsale(float totalsale) {
-		this.totalsale = totalsale;
+	public void setValor_venta(float valor_venta) {
+		this.valor_venta = valor_venta;
 	}
-	public float getSaleTaxes() {
-		return saleTaxes;
+	public List<SaleDetails> getSaleDetails() {
+		return saleDetails;
 	}
-	public void setSaleTaxes(float saleTaxes) {
-		this.saleTaxes = saleTaxes;
+	public void setSaleDetails(List<SaleDetails> saleDetails) {
+		this.saleDetails = saleDetails;
 	}
-    
+	
+	
+
     
     
     

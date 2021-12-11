@@ -11,25 +11,18 @@ public class SaleDetails {
 	
 	@Id
 	private String id;
-	
-    @Size(min = 3, max = 200, message 
-  	      = "Default")
-	private String productCode;
+	private String productCode;//
     
-	
-    @Size(min = 3, max = 200, message 
-  	      = "Default")
 	private String idSale;
 
-    @Size(min = 3, max = 200, message 
-    	      = "Default")
-	private int productQuantity;
-    @Size(min = 3, max = 200, message 
-  	      = "Default")
-	private float saleValue;
-    @Size(min = 3, max = 200, message 
-  	      = "Default")
+	private int productQuantity;//
+
+	private float total_value;
+	private float venta_value;
+
 	private float ivaValue;
+	
+	
 
 	public SaleDetails(String id) {
 		super();
@@ -40,33 +33,28 @@ public class SaleDetails {
 	public SaleDetails() {
 		super();
 	}
-
-
-	public SaleDetails(@Size(min = 3, max = 200, message = "Default") String productCode,
-			@Size(min = 3, max = 200, message = "Default") String idSale,
-			@Size(min = 3, max = 200, message = "Default") int productQuantity,
-			@Size(min = 3, max = 200, message = "Default") float saleValue,
-			@Size(min = 3, max = 200, message = "Default") float ivaValue) {
+	
+	public SaleDetails(String productCode, String idSale, int productQuantity, float total_value, float venta_value,
+			float ivaValue) {
 		super();
 		this.productCode = productCode;
 		this.idSale = idSale;
 		this.productQuantity = productQuantity;
-		this.saleValue = saleValue;
+		this.total_value = total_value;
+		this.venta_value = venta_value;
 		this.ivaValue = ivaValue;
 	}
 
 
-	public SaleDetails(String id, @Size(min = 3, max = 200, message = "Default") String productCode,
-			@Size(min = 3, max = 200, message = "Default") String idSale,
-			@Size(min = 3, max = 200, message = "Default") int productQuantity,
-			@Size(min = 3, max = 200, message = "Default") float saleValue,
-			@Size(min = 3, max = 200, message = "Default") float ivaValue) {
+	public SaleDetails(String id, String productCode, String idSale, int productQuantity, float total_value,
+			float venta_value, float ivaValue) {
 		super();
 		this.id = id;
 		this.productCode = productCode;
 		this.idSale = idSale;
 		this.productQuantity = productQuantity;
-		this.saleValue = saleValue;
+		this.total_value = total_value;
+		this.venta_value = venta_value;
 		this.ivaValue = ivaValue;
 	}
 
@@ -78,9 +66,24 @@ public class SaleDetails {
 		this.id = id;
 	}
 	
-	
-	
-	
+		public float getTotal_value() {
+		return total_value;
+	}
+
+
+	public void setTotal_value(float total_value) {
+		this.total_value = total_value;
+	}
+
+
+	public float getVenta_value() {
+		return venta_value;
+	}
+
+
+	public void setVenta_value(float venta_value) {
+		this.venta_value = venta_value;
+	}
 
 
 	public String getIdSale() {
@@ -101,12 +104,7 @@ public class SaleDetails {
 	public void setProductQuantity(int productQuantity) {
 		this.productQuantity = productQuantity;
 	}
-	public float getSaleValue() {
-		return saleValue;
-	}
-	public void setSaleValue(float saleValue) {
-		this.saleValue = saleValue;
-	}
+
 	public float getIvaValue() {
 		return ivaValue;
 	}
@@ -114,9 +112,5 @@ public class SaleDetails {
 		this.ivaValue = ivaValue;
 	}
     
-	
-	
-	
-	
 
 }

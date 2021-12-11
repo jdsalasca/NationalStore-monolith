@@ -13,11 +13,15 @@ import com.shop.models.Product;
 public interface IProductDAO extends MongoRepository<Product, String>{
 	
 	Optional<Product> findById( String id);
+	
+	
 
 	
 	
 	List <Product> findByProductNameLike (String name);
 	
-	
+
 	List <Product> findByProductCode (String name);
+
+
 }

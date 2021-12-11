@@ -70,8 +70,8 @@ public class ProductController {
 	public ResponseEntity <Product> findByProductCode (@PathVariable String productCode){
 		
 		List<Product> productsFound  = iProductDAO.findByProductCode(productCode);
-		if  (productCode.isEmpty()) {
-			return new ResponseEntity("products not found", HttpStatus.NOT_FOUND);
+		if  (productsFound.isEmpty()) {
+			return new ResponseEntity("product not found", HttpStatus.NOT_FOUND);
 		}else {
 			return new ResponseEntity<Product> (productsFound.get(0), HttpStatus.OK);
 		}
@@ -86,7 +86,7 @@ public class ProductController {
 		try {
 			Product productSaved = iProductDAO.save(product);
 			return new ResponseEntity<Product>(productSaved, HttpStatus.OK);
-		} catch (Exception e) {
+		} catch (Exception e) { 
 
 		return new ResponseEntity("We couldn't create the product", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
